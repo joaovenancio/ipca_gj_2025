@@ -10,10 +10,10 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     public List<Inventory> legalInventories = new ();
-    public List<Inventory> illegalInventories = new ();
-    public List<ItemSO> itemsToPlace = new();
+    //public List<Inventory> illegalInventories = new ();
+    public List<SelectableItem> itemsToPlace = new();
 
-    public ItemSO selectedItem;
+    public SelectableItem selectedItem;
     public GameObject invisItem;
 
     public Dir dir = Dir.Horizontal;
@@ -27,18 +27,32 @@ public class LevelManager : MonoBehaviour
         instance = this;
     }
 
-    public void SelectItem(ItemSO item)
+    public void PlaceItem(Inventory inv)
     {
-        Debug.Log("Selected " + item.name);
+        Debug.Log("Placed " + selectedItem.name);
+        if(itemsToPlace.Contains(selectedItem)) itemsToPlace.Remove(selectedItem);
+        selectedItem = null;
+    }
+
+    public void DeselectItem()
+    {
+        Debug.Log("Deselected " + selectedItem.name);
+        if(invisItem) Destroy(invisItem);
+        selectedItem = null;
+    }
+
+    public void SelectItem(SelectableItem item)
+    {
+        Debug.Log("Selected " + item.itemSO.name);
         selectedItem = item;
 
         if(invisItem) Destroy(invisItem);
         dir = Dir.Horizontal;
 
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        pos.z = 0f;
+        pos.z = -5f;
 
-        Vector2Int size = GetRotatedSize(selectedItem, dir);
+        Vector2Int size = GetRotatedSize(selectedItem.itemSO, dir);
         Vector3 offset = new Vector3(
             -(size.x * 0.5f - 0.5f),
             -(size.y * 0.5f - 0.5f),
@@ -46,7 +60,7 @@ public class LevelManager : MonoBehaviour
         ) * 3;
 
         invisItem = Instantiate(
-            item.prefab,
+            item.itemSO.prefab,
             Vector3.zero, // Will be corrected immediately below
             Quaternion.identity
         );
@@ -71,7 +85,7 @@ public class LevelManager : MonoBehaviour
         if (!invisItem) return;
 
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        pos.z = 0f;
+        pos.z = -5f;
 
         if (TryGetSnappingPosition(pos, out Vector3 snappedWorldPos, out Quaternion snappedRotation))
         {
@@ -80,7 +94,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Vector2Int size = GetRotatedSize(selectedItem, dir);
+            Vector2Int size = GetRotatedSize(selectedItem.itemSO, dir);
             Vector3 offset = new Vector3(
                 -(size.x * 0.5f - 0.5f),
                 -(size.y * 0.5f - 0.5f),
@@ -88,7 +102,7 @@ public class LevelManager : MonoBehaviour
             ) * 3;
 
             invisTargetPos = pos + offset;
-            invisTargetRot = Quaternion.Euler(0f, 0f, selectedItem.GetRotationAngle(dir));
+            invisTargetRot = Quaternion.Euler(0f, 0f, selectedItem.itemSO.GetRotationAngle(dir));
         }
     }
 
@@ -108,7 +122,7 @@ public class LevelManager : MonoBehaviour
             if (x < 0 || y < 0 || x >= inv.sizeColumns || y >= inv.sizeRows) continue;
 
             Vector2Int baseGrid = new Vector2Int(x, y);
-            List<Vector2Int> gridPosList = selectedItem.GetGridPositionList(baseGrid, dir);
+            List<Vector2Int> gridPosList = selectedItem.itemSO.GetGridPositionList(baseGrid, dir);
 
             bool canBuild = true;
             foreach (Vector2Int pos in gridPosList)
@@ -123,9 +137,9 @@ public class LevelManager : MonoBehaviour
 
             if (canBuild)
             {
-                Vector2Int offset = selectedItem.GetRotationOffset(dir);
-                snappedWorldPos = inv.GetWorldPosition(x, y) + new Vector3(offset.x, offset.y, 0f) * inv.cellSize;
-                snappedRotation = Quaternion.Euler(0f, 0f, selectedItem.GetRotationAngle(dir));
+                Vector2Int offset = selectedItem.itemSO.GetRotationOffset(dir);
+                snappedWorldPos = inv.GetWorldPosition(x, y) + new Vector3(offset.x, offset.y, -2f) * inv.cellSize;
+                snappedRotation = Quaternion.Euler(0f, 0f, selectedItem.itemSO.GetRotationAngle(dir));
                 return true;
             }
         }
@@ -153,7 +167,7 @@ public class LevelManager : MonoBehaviour
 
                 if (x < 0 || y < 0 || x >= inv.sizeColumns || y >= inv.sizeRows) continue;
 
-                List<Vector2Int> gridPositionList = selectedItem.GetGridPositionList(new Vector2Int(x, y), dir);
+                List<Vector2Int> gridPositionList = selectedItem.itemSO.GetGridPositionList(new Vector2Int(x, y), dir);
 
                 bool canBuild = true;
 
@@ -174,8 +188,8 @@ public class LevelManager : MonoBehaviour
 
                 if(canBuild)
                 {
-                    Vector2Int offset = selectedItem.GetRotationOffset(dir);
-                    Vector3 worldPos = inv.GetWorldPosition(x, y) + new Vector3(offset.x, offset.y, 0f) * inv.cellSize;
+                    Vector2Int offset = selectedItem.itemSO.GetRotationOffset(dir);
+                    Vector3 worldPos = inv.GetWorldPosition(x, y) + new Vector3(offset.x, offset.y, -2f) * inv.cellSize;
 
                     foreach (Vector2Int gridPosition in gridPositionList)
                     {
@@ -183,9 +197,9 @@ public class LevelManager : MonoBehaviour
                     }
 
                     Instantiate(
-                        selectedItem.prefab,
+                        selectedItem.itemSO.prefab,
                         worldPos,
-                        Quaternion.Euler(0f, 0f, selectedItem.GetRotationAngle(dir))
+                        Quaternion.Euler(0f, 0f, selectedItem.itemSO.GetRotationAngle(dir))
                     );
                     break;
                 }

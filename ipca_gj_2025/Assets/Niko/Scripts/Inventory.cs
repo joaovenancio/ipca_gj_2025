@@ -62,14 +62,26 @@ public class Inventory : MonoBehaviour
         y = Mathf.FloorToInt((worldPosition - transform.position).y / cellSize);
     }
 
-    private void SetValue(int x, int y, int value)
+    private void SetCellLegal(int x, int y, bool isLegal)
     {
         if (x >= sizeRows || y >= sizeColumns) return;
-        //cells[y, x].SetValue(value);
+        cells[y, x].isLegal = isLegal;
+    }
+    
+    public void SetInventoryLegal(bool isLegal)
+    {
+        for (int x = 0; x < cells.GetLength(0); x++)
+        {
+            for (int y = 0; y < cells.GetLength(1); y++)
+            {
+                SetCellLegal(x, y, isLegal);
+            }
+        }
     }
 
-    public void AssignCellsToUI()
+    public bool CheckCellLegality(int x, int y)
     {
-
+        if (x >= sizeRows || y >= sizeColumns) return false;
+        return cells[y, x].isLegal;
     }
 }

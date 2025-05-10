@@ -7,14 +7,16 @@ public class InventoryCell
     public ItemSO item = null;
     public int cellX;
     public int cellY;
-    public bool isOccupied = false;
     public bool isAvailable = true;
+    public bool isLegal = true;
 
     public void DisableCell()
     {
         isAvailable = false;
         Debug.Log("Cell " + cellX + ", " + cellY + " from " + inventory.name + " is disabled");
     }
+
+    public bool IsItemLegal() => item.type != ItemType.Illegal;
 
     public InventoryCell(int x, int y, Inventory inv)
     {

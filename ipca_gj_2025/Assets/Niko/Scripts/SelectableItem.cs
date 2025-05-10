@@ -65,6 +65,6 @@ public class SelectableItem : MonoBehaviour
     {
         Debug.Log("Clicked " + itemSO.name);
         StopAllCoroutines();
-        LevelManager.instance.SelectItem(itemSO);
+        LevelManager.instance.SelectItem(this);
     }
 }
