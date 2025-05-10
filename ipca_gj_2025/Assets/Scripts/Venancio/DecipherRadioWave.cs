@@ -14,11 +14,13 @@ public class DecipherRadioWave : MonoBehaviour
 	[Header("Public Events")]
 	[SerializeField] private UnityEvent _onDecipher;
 	[SerializeField] private UnityEvent<string> _onEmitSound;
+	[SerializeField] private UnityEvent _onStop;
 
 
 	private TextAsset _currentRadioMessage;
 
 	public UnityEvent OnDecipher { get => _onDecipher; }
+	public UnityEvent OnStop { get => _onStop; }
 	public UnityEvent<string> OnEmitSound { get => _onEmitSound; }
 
 
@@ -34,7 +36,15 @@ public class DecipherRadioWave : MonoBehaviour
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
     {
-        if (_radioMessages == null) _radioMessages = new Dictionary<string, TextAsset>();
+		SetupFields();
+	}
+
+	private void SetupFields()
+	{
+		if (_radioMessages == null) _radioMessages = new Dictionary<string, TextAsset>();
+		if (_onDecipher == null) _onDecipher = new UnityEvent();
+		if (_onEmitSound == null) _onEmitSound = new UnityEvent<string>();
+		if (_onStop == null) _onStop = new UnityEvent();
 	}
 
 
@@ -54,6 +64,13 @@ public class DecipherRadioWave : MonoBehaviour
 	{
 		story = new Story(_currentRadioMessage.text);
 		RefreshView();
+	}
+
+	public void StopRadio()
+	{
+		IsTimerRunning = false;
+		_timeElapsed = 0f;
+		_onStop.Invoke();
 	}
 
 	public void Decipher(string code)
