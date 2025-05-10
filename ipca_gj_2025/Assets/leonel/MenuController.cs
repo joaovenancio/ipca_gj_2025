@@ -16,6 +16,8 @@ public class MenuController : MonoBehaviour
     [Header("Confirmation")]
     [SerializeField] private GameObject confirmationPrompt = null;
 
+    private float initialVolume = 0.0f;
+
     public void OpenMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -36,14 +38,30 @@ public class MenuController : MonoBehaviour
     //*****************
     //--- Volume ---
     //*****************
+    public void getVolume()
+    {
+        initialVolume = AudioListener.volume;
+    }
+
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
         volumeTextValue.text = volume.ToString("0.0");
     }
 
+    public void VolumeBack(string back)
+    {
+        if (back == "back")
+        {
+            AudioListener.volume = initialVolume;
+            volumeSlider.value = initialVolume;
+            volumeTextValue.text = initialVolume.ToString("0.0");
+        }
+    }
+
     public void VolumeApply() 
     {
+        initialVolume = AudioListener.volume;
         PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
         StartCoroutine(ConfirmationBox());
         
