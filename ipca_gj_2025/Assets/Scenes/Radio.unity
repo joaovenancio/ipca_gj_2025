@@ -2967,6 +2967,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radioMessageSetup:
+  - Code: 954
+    Text: {fileID: 4900000, guid: 40bc9b582a8036a45b07faa4ae8cab4b, type: 3}
+  - Code: 7575
+    Text: {fileID: 4900000, guid: 4b01d6225eaf93e44b14cab158eb7cac, type: 3}
   - Code: 112
     Text: {fileID: 4900000, guid: 40bc9b582a8036a45b07faa4ae8cab4b, type: 3}
   _onDecipher:

@@ -1,12 +1,12 @@
 -> main
 
 == main ==
-Once upon a time...
+The center...
 
-A time bomb was planted
+And wings...
 
-I like macarena
+Take care
 
-Yo...
+Or they take you
 
 -> main
