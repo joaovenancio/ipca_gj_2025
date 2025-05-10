@@ -1,13 +1,15 @@
-Hello! #portrait:jay
+Hello! #portrait:jay 
 -> main
 
 == main ==
 How are you doing?
 
-* [Ok]
++ [Ok]
     A bit ok.
     Kinda shocked actually.
     -> main
-* [SO SO] Nah...
++ [SO SO] Nah...
     -> END
+
+
 

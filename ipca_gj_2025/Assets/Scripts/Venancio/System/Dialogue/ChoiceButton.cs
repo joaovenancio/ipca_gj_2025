@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ChoiceButton : MonoBehaviour
@@ -7,13 +6,24 @@ public class ChoiceButton : MonoBehaviour
     [Header("References")]
 	[SerializeField] private Button _button;
 	[SerializeField] private TMPro.TMP_Text _buttonText;
-    [Header("Option Reference")]
+    [Header("Optional Reference")]
 	[SerializeField] private DialogueEvents _dialogueEvents;
 
-    [Header("Variables")]
-    public int Option = 0;
-    public int ChoiceIndex = 0;
+	/// <summary>
+	/// The index of the option this button represents in the dialogue system.
+	/// </summary>
+	public int OptionIndex = 0;
+	/// <summary>
+	/// The group this choice belongs to, used to check if this Choice is part of the current group of choices and can be selected.
+	/// </summary>
+	public int ChoiceGroup = 0;
+
+	/// <summary>
+	/// Provides access to the text component of the button, used to display the dialogue option text.
+	/// </summary>
 	public TMPro.TMP_Text ButtonText => _buttonText;
+
+
 
 	private void Awake()
 	{
@@ -21,12 +31,7 @@ public class ChoiceButton : MonoBehaviour
 		SetupButton();
 	}
 
-	// Update is called once per frame
-	void Update()
-    {
-        
-    }
-
+	
 
 	private void SetupFields()
 	{
@@ -49,7 +54,6 @@ public class ChoiceButton : MonoBehaviour
 			return;
 		}
 	}
-
 
 	public void SetupButton()
 	{
