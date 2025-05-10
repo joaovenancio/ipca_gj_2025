@@ -2,27 +2,40 @@ using UnityEngine;
 
 public class StartDialogue : MonoBehaviour
 {
+	[Header("References")]
 	[SerializeField] private TextAsset _inkJSONAsset = null;
+	[Header("Optional References")]
     [SerializeField] private DialogueEvents _dialogueEvents;
+	[Header("Settings")]
+	[SerializeField] private bool _isPlayingOnStart = false;
 
-    [SerializeField] private bool _isPlayingOnStart = false;
+    [Header("Variables")]
+    public bool IsAlreadyPlayed = false;
+
+
+	private void OnEnable()
+	{
+		_dialogueEvents.OnStartDialogue.AddListener(CheckForDialgueAlreadyPlayed);
+	}
+
+	private void OnDisable()
+	{
+		_dialogueEvents.OnStartDialogue.RemoveListener(CheckForDialgueAlreadyPlayed);
+	}
+
+
 
 	private void Awake()
 	{
         SetupFields();
 	}
 
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
     {
         if (_isPlayingOnStart) Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     public void Play(TextAsset textAsset)
     {
@@ -35,7 +48,13 @@ public class StartDialogue : MonoBehaviour
     {
         if (!_inkJSONAsset) return;
 
-        _dialogueEvents.OnStartDialogue.Invoke(_inkJSONAsset);
+
+		_dialogueEvents.OnStartDialogue.Invoke(_inkJSONAsset);
+	}
+
+    private void CheckForDialgueAlreadyPlayed(TextAsset textAsset)
+    {
+        if (textAsset.Equals(_inkJSONAsset)) IsAlreadyPlayed = true;
 	}
 
     private void SetupFields()
