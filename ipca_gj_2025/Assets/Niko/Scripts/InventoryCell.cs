@@ -4,7 +4,7 @@ using UnityEngine;
 public class InventoryCell
 {
     public Inventory inventory;
-    public ItemSO item = null;
+    public PlacedItem item = null;
     public int cellX;
     public int cellY;
     public bool isAvailable = true;
@@ -16,7 +16,13 @@ public class InventoryCell
         Debug.Log("Cell " + cellX + ", " + cellY + " from " + inventory.name + " is disabled");
     }
 
-    public bool IsItemLegal() => item.type != ItemType.Illegal;
+    public void EnableCell()
+    {
+        isAvailable = true;
+        Debug.Log("Cell " + cellX + ", " + cellY + " from " + inventory.name + " is enabled");
+    }
+
+    public bool IsItemLegal() => item.itemSO.type != ItemType.Illegal;
 
     public InventoryCell(int x, int y, Inventory inv)
     {

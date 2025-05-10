@@ -14,6 +14,16 @@ public class SelectableItem : MonoBehaviour
 
     float fontSize;
 
+    public static SelectableItem CreateFrom(SelectableItem source, Transform parent, GameObject prefab)
+    {
+        GameObject obj = GameObject.Instantiate(prefab, parent);
+        SelectableItem clone = obj.GetComponent<SelectableItem>();
+        clone.itemSO = source.itemSO;
+        clone.amount = source.amount;
+        clone.SetItem();
+        return clone;
+    }
+
     private void Start()
     {
         SetItem();

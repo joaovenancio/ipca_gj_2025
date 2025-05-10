@@ -2801,16 +2801,16 @@ MonoBehaviour:
   section: 3
   cellsToDisable:
   - 00
-  - 01
-  - 04
-  - 05
   - 10
-  - 11
   - 40
-  - 41
   - 50
-  - 51
-  - 54
+  - 01
+  - 11
+  - 04
+  - 14
+  - 05
+  - 15
+  - 45
   - 55
   InventoryUI: {fileID: 0}
 --- !u!4 &605491147
@@ -4416,6 +4416,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &946920513 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8573573830116536874, guid: 9642a5476d1c85840b15fa19fb8ee9d9, type: 3}
+  m_PrefabInstance: {fileID: 769243279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c39a23f5130cd04bab54e9385c10d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &955668051
 GameObject:
   m_ObjectHideFlags: 0
@@ -4450,10 +4461,10 @@ MonoBehaviour:
   cellSize: 3
   section: 1
   cellsToDisable:
-  - 10
-  - 20
-  - 30
-  - 40
+  - 01
+  - 02
+  - 03
+  - 04
   InventoryUI: {fileID: 0}
 --- !u!4 &955668053
 Transform:
@@ -6031,8 +6042,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dontDestroyOnLoad: 0
-  _dialogueEvents: {fileID: 0}
-  _pointerEvents: {fileID: 0}
+  _dialogueEvents: {fileID: 1583326947}
+  _pointerEvents: {fileID: 357570179}
 --- !u!1 &1698941308
 GameObject:
   m_ObjectHideFlags: 0
@@ -6241,9 +6252,12 @@ MonoBehaviour:
   - {fileID: 553458985}
   - {fileID: 1764462783}
   - {fileID: 605491146}
-  illegalInventories: []
-  itemsToPlace: []
-  selectedItem: {fileID: 11400000, guid: 2b1ed8d167ca2f24995cea3554a06bc6, type: 2}
+  itemsToPlace:
+  - {fileID: 2142033477}
+  - {fileID: 946920513}
+  listParent: {fileID: 1270928823}
+  selectableItemPrefab: {fileID: 5770142774025502384, guid: 9642a5476d1c85840b15fa19fb8ee9d9, type: 3}
+  selectedItem: {fileID: 0}
   invisItem: {fileID: 0}
   dir: 0
   invisFollowSpeed: 45
@@ -7822,6 +7836,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: 365d08d575cec474faa790572e93c451, type: 3}
   m_ActionId: 438d6c89-0d14-4ccd-9aa2-490444cc6f87
+--- !u!114 &2142033477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8573573830116536874, guid: 9642a5476d1c85840b15fa19fb8ee9d9, type: 3}
+  m_PrefabInstance: {fileID: 4884496565231433399}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c39a23f5130cd04bab54e9385c10d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143304804
 GameObject:
   m_ObjectHideFlags: 0
