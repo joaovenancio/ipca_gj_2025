@@ -37,14 +37,10 @@ public class DialogueUI : MonoBehaviour
 
 	private void OnEnable()
 	{
-		_dialogueEvents.OnShowChoices.AddListener(ShowChoices);
-		_dialogueEvents.OnHideChoices.AddListener(HideChoices);
 	}
 
 	private void OnDisable()
 	{
-		_dialogueEvents.OnShowChoices.RemoveListener(ShowChoices);
-		_dialogueEvents.OnHideChoices.RemoveListener(HideChoices);
 	}
 
 	private void Awake()
@@ -105,13 +101,11 @@ public class DialogueUI : MonoBehaviour
 
 	public void ShowChoices() 
 	{
-		HideDialogueBox();
 		_choicesPanel.SetActive(true);
 	}
 
 	public void HideChoices()
 	{
-		ShowDialogueBox();
 		_choicesPanel.SetActive(false);
 		SetDefaultValuesForChoicesButtons();
 	}

@@ -16,9 +16,11 @@ public class DialogueEvents : MonoBehaviour
 	[Tooltip("Event triggered when the dialogue ends.")]
 	[Space, SerializeField] private UnityEvent _onDialogueEnded;
 	[Tooltip("Event triggered when the dialogue starts.")]
-	[Space, SerializeField] private UnityEvent _onDialogueStarted;
+	[Space, SerializeField] private UnityEvent<TextAsset> _onDialogueStarted;
 	[Tooltip("Event triggered to start an dialogue.")]
 	[Space, SerializeField] private UnityEvent<TextAsset> _onStartDialogue;
+	[Tooltip("Event triggered to prompt the next dialogue.")]
+	[Space, SerializeField] private UnityEvent _onNext;
 
 
 	public UnityEvent<ChoiceButton> OnChooseDialogueOption { get => _onChooseDialogueOption; }
@@ -26,8 +28,9 @@ public class DialogueEvents : MonoBehaviour
 	public UnityEvent OnShowChoices { get => _onShowChoices; }
 	public UnityEvent OnHideChoices { get => _onHideChoices; }
 	public UnityEvent OnDialogueEnded { get => _onDialogueEnded; }
-	public UnityEvent OnDialogueStarted { get => _onDialogueStarted; }
+	public UnityEvent<TextAsset> OnDialogueStarted { get => _onDialogueStarted; }
 	public UnityEvent<TextAsset> OnStartDialogue { get => _onStartDialogue; }
+	public UnityEvent OnNext { get => _onNext; }
 	#endregion
 
 
@@ -47,8 +50,9 @@ public class DialogueEvents : MonoBehaviour
 		if (_onShowNextText == null) _onShowNextText = new UnityEvent<string>();
 		if (_onShowChoices == null) _onShowChoices = new UnityEvent();
 		if (_onDialogueEnded == null) _onDialogueEnded = new UnityEvent();
-		if (_onDialogueStarted == null) _onDialogueStarted = new UnityEvent();
+		if (_onDialogueStarted == null) _onDialogueStarted = new UnityEvent<TextAsset>();
 		if(_onStartDialogue == null) _onStartDialogue = new UnityEvent<TextAsset>();
+		if (_onNext == null) _onNext = new UnityEvent();
 	}
 
 	

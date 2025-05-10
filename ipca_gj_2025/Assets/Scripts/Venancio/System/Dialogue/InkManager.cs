@@ -26,12 +26,14 @@ public class InkManager : MonoBehaviour //TO-DO: Separete the choices logic from
 	{
 		_dialogueEvents.OnChooseDialogueOption.AddListener(ChooseDialogueOption);
 		_dialogueEvents.OnStartDialogue.AddListener(StartStory);
+		_dialogueEvents.OnNext.AddListener(RefreshView);
 	}
 
 	private void OnDisable()
 	{
 		_dialogueEvents.OnChooseDialogueOption.RemoveListener(ChooseDialogueOption);
 		_dialogueEvents.OnStartDialogue.RemoveListener(StartStory);
+		_dialogueEvents.OnNext.RemoveListener(RefreshView);
 	}
 
 	private void Awake()
@@ -75,7 +77,9 @@ public class InkManager : MonoBehaviour //TO-DO: Separete the choices logic from
 
 		_currentStory = new Story(_inkJSONAsset.text);
 
-		_dialogueEvents.OnDialogueStarted.Invoke();
+		_dialogueEvents.OnDialogueStarted.Invoke(_inkJSONAsset);
+
+		_dialogueUI.ShowDialogueBox();
 
 		RefreshView();
 	}
@@ -88,7 +92,9 @@ public class InkManager : MonoBehaviour //TO-DO: Separete the choices logic from
 
 		_currentStory = new Story(_inkJSONAsset.text);
 		
-		_dialogueEvents.OnDialogueStarted.Invoke();
+		_dialogueEvents.OnDialogueStarted.Invoke(_inkJSONAsset);
+
+		_dialogueUI.ShowDialogueBox();
 
 		RefreshView();
 	}
@@ -195,6 +201,9 @@ public class InkManager : MonoBehaviour //TO-DO: Separete the choices logic from
 		_isDialogueRunning = false;
 
 		_dialogueEvents.OnDialogueEnded.Invoke();
+
+		_dialogueUI.HideChoices();
+		_dialogueUI.HideDialogueBox();
 	}
 
 }
