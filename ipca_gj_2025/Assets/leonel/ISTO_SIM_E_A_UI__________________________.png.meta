@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2c95feb6327564242b7f6b1b492ceb07
+guid: 963c1536f8e49ce4f8c9ea9b7bbc3f85
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1318845388660053381
-    second: tick-mark_0
+      213: 3909017607234875130
+    second: ISTO_SIM_E_A_UI___________________________0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tick-mark_0
+      name: ISTO_SIM_E_A_UI___________________________0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 4
+        y: 5
+        width: 1794
+        height: 617
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b7a61474b1582bde0800000000000000
-      internalID: -1318845388660053381
+      spriteID: afe6bfb8dce9f3630800000000000000
+      internalID: 3909017607234875130
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      tick-mark_0: -1318845388660053381
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

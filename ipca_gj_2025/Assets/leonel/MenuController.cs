@@ -40,6 +40,7 @@ public class MenuController : MonoBehaviour
     //*****************
     public void getVolume()
     {
+        //Debug.Log("volume: " + AudioListener.volume);
         initialVolume = AudioListener.volume;
     }
 
@@ -65,7 +66,7 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
         StartCoroutine(ConfirmationBox());
         
-        //Debug.Log("volume: " + AudioListener.volume);
+        //Debug.Log("applu volume: " + AudioListener.volume);
     }
 
     public void ResetVolume(string MenuType)
