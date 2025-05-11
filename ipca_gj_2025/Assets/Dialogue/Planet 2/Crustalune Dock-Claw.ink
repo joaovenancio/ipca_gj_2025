@@ -17,9 +17,9 @@ What’s this, surf-walker? You lost or just nosy?
         +++ I listen better than I talk.
             (A low grunt.)
             Then hear this:
-            They only scan the **center compartments**. The mid-hull gets all the beams.
+            They only scan the **cargo compartments**. The back of the ship gets all the beams.
             Hide your business in the outer bulkheads—life support crawlspace, landing struts, I don’t care.
-            Just don’t get clever near the core.
+            Just don’t get clever near the back.
             -> tip
 
         +++ Or maybe I don’t listen at all.
@@ -51,6 +51,6 @@ What’s this, surf-walker? You lost or just nosy?
 
 == tip ==
 
-(Mid-hull’s the trap. Everything else? That’s your playground.) #tip:tip
+(Cargo hull is the trap. Everything else? That’s your playground.) #tip:tip
 
 -> END

@@ -20,7 +20,6 @@ But you’ve got curiosity in your eyes. Dangerous. I like that.
             +++ [(nod your head)]
                 Good boy.
                 -> tip
-                
             +++ [Can't do]
                 But here’s the thing—you’re asking for something you can’t afford without a little give and take. Silence comes at a price, and if you’re not willing to pay, well...
                 (Her voice softens, but it’s all the more dangerous.)
@@ -40,7 +39,6 @@ But you’ve got curiosity in your eyes. Dangerous. I like that.
     You want to get something past their scans? You better have something more than just a slick trick. A few well-placed credits can get you further than you think.
     (She smirks, dismissing you.)
     But don’t take me for a fool. Crustalune’s about deals, not favors.
-
     +++ [You don’t think it’s possible? There has to be a way through. What’s the Council’s weakness?] 
         (She smirks.)
         A weakness? If there was one, you think I’d be telling you?
@@ -56,7 +54,6 @@ But you’ve got curiosity in your eyes. Dangerous. I like that.
             (She shrugs.)
             But if you burn those bridges, don’t expect mercy.
             -> END
-        
         ++++ [How would you know about their pride? You’ve been there before?]
             (She shrugs nonchalantly.)
             Maybe I’ve been there. Maybe I haven’t. What’s it to you?
@@ -65,7 +62,6 @@ But you’ve got curiosity in your eyes. Dangerous. I like that.
             (Her tone hardens.)
             If you think you can slip by unnoticed, you’re wrong.
             -> END
-            
     +++ [What about the Tide? What can you tell me about them?]
         (She sighs and leans back, tapping her fingers on the table.)
         The Tide? They don’t just control the scans, they control the flow—people, goods, information, everything.  
@@ -81,7 +77,6 @@ But you’ve got curiosity in your eyes. Dangerous. I like that.
             (She glances at you.)
             But that’s not your problem. Your problem is getting in and out alive.
             -> END
-            
         ++++ [And if I tried to go around them? Hide my cargo from their eyes?]
             (Her expression turns cold, her lips curling into a faint smirk.)
             Go around them? Sure, you can try. But everyone who’s tried before is dead or worse.
@@ -90,7 +85,6 @@ But you’ve got curiosity in your eyes. Dangerous. I like that.
             (Her smile returns, dangerous.)
             But if you’re serious about hiding it, I could help you. But it’ll cost you—more than you’re willing to pay.
             -> END
-    
     
 == tip ==
 Go to the frequency 954, they know Crustalune stuff.
