@@ -22,7 +22,7 @@ public class OnHoverUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 	public UnityEvent<RectTransform> OnExit { get => _onExit; }
 	public bool IsPointerOver { get => _isPointerOver; } 
 
-
+	public bool isExitingOnDisable = false;
 
 	private void OnEnable()
 	{
@@ -31,7 +31,9 @@ public class OnHoverUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
 	private void OnDisable()
 	{
-	}
+		if(isExitingOnDisable)
+			ExitUI();
+    }
 
 	private void Awake()
 	{

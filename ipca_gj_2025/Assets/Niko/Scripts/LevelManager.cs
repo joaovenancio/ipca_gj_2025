@@ -1,5 +1,9 @@
+using EasyTextEffects;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -25,6 +29,9 @@ public class LevelManager : MonoBehaviour
     public Button validateButton;
     public int currentPlanet = 1; // can be 1, 2, or 3 depending on level
 
+    public Image fader;
+    public TMP_Text resultText;
+
     private void Awake()
     {
         instance = this;
@@ -49,6 +56,7 @@ public class LevelManager : MonoBehaviour
                 Debug.LogWarning("Invalid planet number for validation.");
                 return;
         }
+        StartCoroutine(FadeOutAndShowResult(passed));
 
         if (passed)
         {
@@ -59,6 +67,40 @@ public class LevelManager : MonoBehaviour
             Debug.Log("<color=red> You failed! The authorities found something illegal.</color>");
         }
     }
+
+    private IEnumerator FadeOutAndShowResult(bool passed)
+    {
+        float duration = 1f;
+        float elapsed = 0f;
+        Color color = fader.color;
+
+        fader.gameObject.SetActive(true);
+        resultText.gameObject.SetActive(false);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsed / duration);
+            fader.color = color;
+            yield return null;
+        }
+
+        resultText.gameObject.SetActive(true);
+        resultText.text = passed ? "You passed inspection!" : "Caught with illegal cargo!";
+        resultText.GetComponent<TextEffect>()?.Refresh();
+
+        yield return new WaitForSeconds(2f);
+
+        if (passed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
 
     public SelectableItem FindUIItemFor(ItemSO itemSO)
     {
