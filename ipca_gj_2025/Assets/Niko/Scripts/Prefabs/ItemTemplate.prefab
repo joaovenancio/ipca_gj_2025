@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: c638cb93e5375b045b9465ec1f7bb0c2, type: 2}
-  amount: 2
+  amount: 3
   icon: {fileID: 8289978959953173116}
   nameText: {fileID: 2947663901811134883}
   hoverColor: {r: 0.57861626, g: 0.57861626, b: 0.57861626, a: 0.53333336}
@@ -130,6 +130,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _isPointerOver: 0
+  isExitingOnDisable: 0
 --- !u!114 &1751901279321322498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,8 +302,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: x 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a1011fc678013b54ca124a1da0929026, type: 2}
-  m_sharedMaterial: {fileID: -7305863373871000330, guid: a1011fc678013b54ca124a1da0929026, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cfda72d822ca99d459784ba473a0db8b, type: 2}
+  m_sharedMaterial: {fileID: -2642586717167092541, guid: cfda72d822ca99d459784ba473a0db8b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
