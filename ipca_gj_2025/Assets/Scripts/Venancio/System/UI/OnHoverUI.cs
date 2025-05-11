@@ -31,6 +31,7 @@ public class OnHoverUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
 	private void OnDisable()
 	{
+		ExitUI();
 	}
 
 	private void Awake()
