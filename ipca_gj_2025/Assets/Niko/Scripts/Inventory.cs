@@ -13,8 +13,6 @@ public class Inventory : MonoBehaviour
     public InventoryCell[,] cells;
     public List<string> cellsToDisable = new();
 
-    public GameObject InventoryUI;
-
     private void Start()
     {
         SetupInventory();

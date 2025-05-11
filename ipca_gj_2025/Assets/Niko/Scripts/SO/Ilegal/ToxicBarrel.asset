@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f2a40708aa308449321ce406437af0, type: 3}
+  m_Name: ToxicBarrel
+  m_EditorClassIdentifier: 
+  itemName: Test2
+  prefab: {fileID: 1121253948026805440, guid: 0fd502629723b3f42a9495d81acceebb, type: 3}
+  icon: {fileID: 21300000, guid: ffe2fdb32c9d2e1428b53518e3652e81, type: 3}
+  type: 1
+  width: 2
+  height: 2

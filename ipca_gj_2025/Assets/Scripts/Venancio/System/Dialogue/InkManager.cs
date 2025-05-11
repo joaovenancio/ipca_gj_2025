@@ -3,6 +3,7 @@ using Ink.Runtime;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System;
+using EasyTextEffects;
 
 
 public class InkManager : MonoBehaviour //TO-DO: Separete the choices logic from the dialogue logic
@@ -102,6 +103,7 @@ public class InkManager : MonoBehaviour //TO-DO: Separete the choices logic from
 	private void SetupDialogueText(string text)
 	{
 		_dialogueUI.DialogueText.text = text;
+		_dialogueUI.DialogueText.GetComponent<TextEffect>().Refresh();
 	}
 
 	public void RefreshView()

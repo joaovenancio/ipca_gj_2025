@@ -13,16 +13,9 @@ public class SelectableItem : MonoBehaviour
     public TMP_Text nameText;
 
     float fontSize;
-
-    public static SelectableItem CreateFrom(SelectableItem source, Transform parent, GameObject prefab)
-    {
-        GameObject obj = GameObject.Instantiate(prefab, parent);
-        SelectableItem clone = obj.GetComponent<SelectableItem>();
-        clone.itemSO = source.itemSO;
-        clone.amount = source.amount;
-        clone.SetItem();
-        return clone;
-    }
+    Color color;
+    public Color hoverColor;
+    public Color hoverIlegalColor;
 
     private void Start()
     {
@@ -33,7 +26,10 @@ public class SelectableItem : MonoBehaviour
     {
         fontSize = nameText.fontSize;
         icon.sprite = itemSO.icon;
-        nameText.text = itemSO.name + " x" + amount;
+        nameText.text = " x " + amount;
+
+        nameText.color = itemSO.type == ItemType.Illegal ? Color.cyan : Color.white;
+        color = nameText.color;
     }
 
     public void DeleteItem()
@@ -44,7 +40,7 @@ public class SelectableItem : MonoBehaviour
     public void SetAmount(int amount)
     {
         this.amount = amount;
-        nameText.text = itemSO.name + " x" + amount;
+        nameText.text = " x " + amount;
     }
 
     public void BtnHoverEnter()
@@ -63,12 +59,14 @@ public class SelectableItem : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         nameText.fontSize = fontSize * 1.1f;
+        nameText.color = itemSO.type == ItemType.Illegal ? hoverIlegalColor : hoverColor;
     }
 
     IEnumerator OnBtnHoverExit()
     {
-        nameText.fontSize = fontSize;
         yield return new WaitForSeconds(0.1f);
+        nameText.fontSize = fontSize;
+        nameText.color = color;
     }
     
     public void BtnClick()

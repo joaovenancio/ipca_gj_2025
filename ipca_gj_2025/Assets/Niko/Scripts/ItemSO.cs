@@ -46,9 +46,10 @@ public class ItemSO : ScriptableObject
         switch (dir)
         {
             default:
-            case Dir.Horizontal: // Down
+            case Dir.Horizontal:
                 return new Vector2Int(0, 0);
-            case Dir.Vertical:   // Left (rotated)
+
+            case Dir.Vertical:
                 return new Vector2Int(height, 0);
         }
     }
@@ -59,16 +60,16 @@ public class ItemSO : ScriptableObject
 
         switch (dir)
         {
-            case Dir.Horizontal: // Down
+            case Dir.Horizontal:
                 for (int x = 0; x < width; x++)
                     for (int y = 0; y < height; y++)
                         list.Add(basePos + new Vector2Int(x, y));
                 break;
 
-            case Dir.Vertical: // Left (rotated)
+            case Dir.Vertical:
                 for (int x = 0; x < height; x++)
                     for (int y = 0; y < width; y++)
-                        list.Add(basePos + new Vector2Int(-x, y));
+                        list.Add(basePos + new Vector2Int(x, y));
                 break;
         }
 
