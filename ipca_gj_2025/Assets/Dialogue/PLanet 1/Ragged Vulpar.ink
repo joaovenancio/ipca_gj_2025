@@ -44,12 +44,12 @@
     
     
 == tip ==
-"Crustalune’s orbital net runs straight trought your ships. Ceentric waves—slow and overlapping. They shoot them every 30 seconds minutes.
+Crustalune’s orbital net runs straight trought your ships. Ceentric waves—slow and overlapping. They shoot them every 30 seconds minutes.
 (He taps the table twice, rhythmically.)
-"If your ship is a class x45, they wouldn’t scan anything other than the center rows.
+If your ship is a class x45, they will definetly scan the two center rows.
 
 + [Thanks. That’s more than I expected. You didn’t have to talk]
     Didn’t have to sit in this pit either, but here we are."
-    "Just don’t waste what I gave you. Vulparis doesn’t breed fools, so don’t go to act like one."
+    Just don’t waste what I gave you. Vulparis doesn’t breed fools, so don’t go to act like one.
     -> END
 

@@ -35,9 +35,9 @@
         -> tip
 
     ++ [I get it. But I’m just trying to find a way past Planet 70’s scans.]
-        "Ah, back to the scans, huh? Well, here’s the thing: it's all about making them forget to look in the right places."
+        Ah, back to the scans, huh? Well, here’s the thing: it's all about making them forget to look in the right places.
         (The Toxirian’s eyes narrow for a moment, calculating something.)
-        "You’ve got to trick them into thinking you're not there. Misdirection, distraction—makes all the difference."
+        You’ve got to trick them into thinking you're not there. Misdirection, distraction—makes all the difference.
         -> tip
 
 == tip ==
@@ -45,9 +45,9 @@
 (The Toxirian suddenly perks up, clicking its mandibles faster, as though it’s getting to the important part.)
 
 You want to know the trick to get through the scans, huh? Here’s a simple one for you. Solve this, and you’ll be one step closer:
-"Alright, here’s a little math for you—don't worry, it’s easy. Ready?"
+Alright, here’s a little math for you—don't worry, it’s easy. Ready?
 
-"35 + 5 + 400."
+35 + 5 + 400.
 
 (It lets the numbers hang in the air for a moment, the Toxirian tapping its legs to some unspoken rhythm.)
 
