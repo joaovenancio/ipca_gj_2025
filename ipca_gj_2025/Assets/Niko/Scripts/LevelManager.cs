@@ -73,7 +73,7 @@ public class LevelManager : MonoBehaviour
             if (canBuild)
             {
                 Vector2Int offset = selectedItem.itemSO.GetRotationOffset(dir);
-                Vector3 worldPos = inv.GetWorldPosition(x, y) + new Vector3(offset.x, offset.y, -2f) * inv.cellSize;
+                Vector3 worldPos = inv.GetWorldPosition(x, y) + new Vector3(offset.x, offset.y, -2f) * 3;
 
                 GameObject placedObj = Instantiate(
                     selectedItem.itemSO.prefab,
@@ -176,7 +176,7 @@ public class LevelManager : MonoBehaviour
         if (!invisItem || selectedItem == null) return;
 
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        pos.z = -5f;
+        pos.z = 0f;
 
         if (TryGetSnappingPosition(pos, out Vector3 snappedWorldPos, out Quaternion snappedRotation))
         {
@@ -186,13 +186,20 @@ public class LevelManager : MonoBehaviour
         else
         {
             Vector2Int size = GetRotatedSize(selectedItem.itemSO, dir);
-            Vector3 offset = new Vector3(
+            Vector2 centerOffset = new Vector3(
                 -(size.x * 0.5f - 0.5f),
                 -(size.y * 0.5f - 0.5f),
                 0f
-            ) * 3;
+            );
 
-            invisTargetPos = pos + offset;
+            // Rotate the offset based on the actual angle
+            float angle = selectedItem.itemSO.GetRotationAngle(dir) * Mathf.Deg2Rad;
+            Vector2 rotatedOffset = new Vector2(
+                centerOffset.x * Mathf.Cos(angle) - centerOffset.y * Mathf.Sin(angle),
+                centerOffset.x * Mathf.Sin(angle) + centerOffset.y * Mathf.Cos(angle)
+            );
+
+            invisTargetPos = pos + new Vector3(rotatedOffset.x, rotatedOffset.y, 0f) * 3;
             invisTargetRot = Quaternion.Euler(0f, 0f, selectedItem.itemSO.GetRotationAngle(dir));
         }
     }

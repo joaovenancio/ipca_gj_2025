@@ -1,3 +1,4 @@
+using EasyTextEffects;
 using UnityEngine;
 
 public class ChangeText : MonoBehaviour
@@ -31,5 +32,6 @@ public class ChangeText : MonoBehaviour
         if (!_textToChange) return;
 
 		_textToChange.text = newText;
+		GetComponent<TextEffect>()?.Refresh();
 	}
 }
