@@ -78,7 +78,7 @@ public class GamePartManager : MonoBehaviour
         canteenUI.SetActive(false);
         radioUI.SetActive(false);
 
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.4f);
 
         canteenUI.SetActive(currentPart == Part.Canteen);
         radioUI.SetActive(currentPart == Part.Radio);

@@ -372,7 +372,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && selectedItem != null)
+        if (Input.GetMouseButtonDown(2) && selectedItem != null)
         {
             //dir = ItemSO.GetNextDir(dir);
             RotateItem();
