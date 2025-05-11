@@ -256,6 +256,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &168147358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 168147361}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &168147361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168147358}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &186245997
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +641,7 @@ GameObject:
   - component: {fileID: 404596685}
   - component: {fileID: 404596684}
   - component: {fileID: 404596683}
+  - component: {fileID: 404596687}
   m_Layer: 5
   m_Name: NPC TOSTADO
   m_TagString: Untagged
@@ -652,6 +684,18 @@ MonoBehaviour:
   _onClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 404596684}
+        m_TargetAssemblyTypeName: StartDialogue, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 404596684}
         m_TargetAssemblyTypeName: StartDialogue, Assembly-CSharp
         m_MethodName: Play
@@ -753,8 +797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe196b2b4c78a84d814e3ade320f769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 404596683}
-  _parameterName: IsHovering
+  isPlaying: 0
+  hoverSpeed: 2
+  hoverHeight: 10
 --- !u!114 &404596686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +845,24 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _isPointerOver: 0
+  isExitingOnDisable: 0
+--- !u!114 &404596687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404596677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f70338f65fa2b44b7e0e33a16f35d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioName: B
+  _isUsingDefaultGroupVolume: 0
+  _volume: 1
+  _isPlayingOnAwake: 1
+  _audioSource: {fileID: 0}
 --- !u!1 &433773139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1093,7 @@ MonoBehaviour:
   - {fileID: 1522903333}
   - {fileID: 343762474}
   _dialogueEvents: {fileID: 0}
+  _dialogueBG: {fileID: 0}
 --- !u!224 &561585248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1467,8 +1531,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe196b2b4c78a84d814e3ade320f769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 882046241}
-  _parameterName: IsHovering
+  isPlaying: 0
+  hoverSpeed: 2
+  hoverHeight: 10
 --- !u!114 &882046244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,6 +1608,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _isPointerOver: 0
+  isExitingOnDisable: 0
 --- !u!114 &882046246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1730,6 +1796,8 @@ GameObject:
   - component: {fileID: 1522903330}
   - component: {fileID: 1522903332}
   - component: {fileID: 1522903333}
+  - component: {fileID: 1522903335}
+  - component: {fileID: 1522903334}
   m_Layer: 5
   m_Name: Option A
   m_TagString: Untagged
@@ -1856,6 +1924,39 @@ MonoBehaviour:
   _dialogueEvents: {fileID: 0}
   OptionIndex: 0
   ChoiceGroup: 0
+--- !u!114 &1522903334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522903328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42dc0c3d6f20f584ca9efc84a398d5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 0}
+  _pointerEvents: {fileID: 0}
+  _onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  _onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  _isPointerOver: 0
+  isExitingOnDisable: 0
+--- !u!192 &1522903335
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522903328}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_IsViewVolume: 1
 --- !u!1 &1683124662
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,8 +2577,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe196b2b4c78a84d814e3ade320f769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 2021852174}
-  _parameterName: IsHovering
+  isPlaying: 0
+  hoverSpeed: 2
+  hoverHeight: 10
 --- !u!114 &2021852177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2552,6 +2654,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _isPointerOver: 0
+  isExitingOnDisable: 0
 --- !u!114 &2021852179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2787,6 +2890,7 @@ SceneRoots:
   - {fileID: 561585248}
   - {fileID: 1696373056}
   - {fileID: 526787817}
+  - {fileID: 168147361}
   - {fileID: 829274387}
   - {fileID: 16714838}
   - {fileID: 345676185}
