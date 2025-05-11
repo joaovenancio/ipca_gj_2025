@@ -27,8 +27,8 @@ public class Inventory : MonoBehaviour
         {
             int cellX = int.Parse(cell[0].ToString());
             int cellY = int.Parse(cell[1].ToString());
-            if(cellX >= sizeRows || cellY >= sizeColumns) continue;
-            cells[cellY, cellX].DisableCell();
+            if(cellX >= sizeColumns || cellY >= sizeRows) continue;
+            cells[cellX, cellY].DisableCell();
         }
     }
 
@@ -42,7 +42,7 @@ public class Inventory : MonoBehaviour
         {
             for (int y = 0; y < cells.GetLength(1); y++)
             {
-                cells[x, y] = new InventoryCell(y, x, this);
+                cells[x, y] = new InventoryCell(x, y, this);
                 Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 100f);
                 Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
             }
@@ -56,20 +56,58 @@ public class Inventory : MonoBehaviour
         return new Vector3(x, y) * cellSize + transform.position;
     }
 
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) return;
+
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        GetXY(mousePos, out int x, out int y);
+
+        if (x >= 0 && y >= 0 && x < sizeColumns && y < sizeRows)
+        {
+            Gizmos.color = Color.red;
+            Vector3 world = GetWorldPosition(x, y);
+            Gizmos.DrawWireCube(world + new Vector3(0.5f, 0.5f, -2f) * cellSize, Vector3.one * cellSize * 0.95f);
+        }
+    }
+
     public void GetXY(Vector3 worldPosition, out int x, out int y)
     {
         x = Mathf.FloorToInt((worldPosition - transform.position).x / cellSize);
         y = Mathf.FloorToInt((worldPosition - transform.position).y / cellSize);
     }
 
-    private void SetValue(int x, int y, int value)
+    public Vector2Int GetXYWorld(Vector2Int gridCoords)
     {
-        if (x >= sizeRows || y >= sizeColumns) return;
-        //cells[y, x].SetValue(value);
+        return new Vector2Int(gridCoords.x, gridCoords.y);
     }
 
-    public void AssignCellsToUI()
+    public void SetCellItem(int x, int y, PlacedItem item)
     {
+        if (x >= sizeColumns || y >= sizeRows) return;
+        cells[x,y].item = item;
+    }
 
+    private void SetCellLegal(int x, int y, bool isLegal)
+    {
+        if (x >= sizeColumns || y >= sizeRows) return;
+        cells[x,y].isLegal = isLegal;
+    }
+    
+    public void SetInventoryLegal(bool isLegal)
+    {
+        for (int x = 0; x < cells.GetLength(0); x++)
+        {
+            for (int y = 0; y < cells.GetLength(1); y++)
+            {
+                SetCellLegal(x, y, isLegal);
+            }
+        }
+    }
+
+    public bool CheckCellLegality(int x, int y)
+    {
+        if (x >= sizeColumns || y >= sizeRows) return false;
+        return cells[x,y].isLegal;
     }
 }
