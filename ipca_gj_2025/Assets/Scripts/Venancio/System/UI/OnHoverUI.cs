@@ -40,7 +40,10 @@ public class OnHoverUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 		SetupFields();
 	}
 
-
+	public void StopHovering()
+	{
+		ExitUI();
+	}
 
 	private void SetupFields()
 	{
