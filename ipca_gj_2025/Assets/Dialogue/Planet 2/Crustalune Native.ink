@@ -5,36 +5,31 @@
 
 You carry questions like barnacles on a hull. Ask, and I’ll see which come loose.
 
-+ I heard Toxiri scans for cargo are getting tighter. What do you know about them?
++ [I heard Toxiri scans for cargo are getting tighter. What do you know about them?]
     (Their eyes close briefly, thoughtful.)
     Toxiri’s scanners probe deep, but not wisely. They chase patterns without understanding shape or context.
     I’ve spoken with traders who’ve learned to… rearrange things.
     Still, not many come back smiling.
-
-    ++ Rearranged how? You mean routes?
+    ++ [Rearranged how? You mean routes?]
         (They tilt their head.)
         No. I mean how cargo *appears* to their systems. 
         One object split across smaller ones. That’s the trick.
         Maybe you could understand in this way: a grill.
         A friend of mine calls it “seeding the fog.”
         -> tip
-
-    ++ Doesn’t matter how clever you are, they’ll find something eventually.
+    ++ [Doesn’t matter how clever you are, they’ll find something eventually.]
         (Their voice remains calm.)
         That is true. But some waters are best crossed on the quietest tide.
         -> END
-
-+ You Crustalune folk ever deal with Toxiri scanners?
++ [You Crustalune folk ever deal with Toxiri scanners?]
     (They smile gently.)
     We rarely leave the sea. But when we do, we remember our shapes confuse most machines.
     Perhaps that’s a lesson—sometimes, not matching expectations is your greatest shield.
-
-    ++ So you don’t know much, then?
+    ++ [So you don’t know much, then?]
         (They nod slowly.)
         Knowledge is a current. This one does not flow through me today.
         -> END
-
-    ++ What would you do, if you had to get something past them?
+    ++ [What would you do, if you had to get something past them?]
         (Their gaze drifts to the horizon.)
         I would seek someone who’s already succeeded. And I would listen, very carefully.
         -> END
