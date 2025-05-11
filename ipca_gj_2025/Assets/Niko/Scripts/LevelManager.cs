@@ -1,10 +1,6 @@
-using CodeMonkey.Utils;
-using JetBrains.Annotations;
-using NUnit;
-using NUnit.Framework;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -26,9 +22,42 @@ public class LevelManager : MonoBehaviour
     private Quaternion invisTargetRot;
     public float invisFollowSpeed = 15f; // You can tweak this
 
+    public Button validateButton;
+    public int currentPlanet = 1; // can be 1, 2, or 3 depending on level
+
     private void Awake()
     {
         instance = this;
+    }
+
+    public void ValidateShip()
+    {
+        bool passed = false;
+
+        switch (currentPlanet)
+        {
+            case 1:
+                passed = LevelEndChecker.CheckPlanet1(legalInventories);
+                break;
+            case 2:
+                passed = LevelEndChecker.CheckPlanet2(legalInventories);
+                break;
+            case 3:
+                passed = LevelEndChecker.CheckPlanet3(legalInventories);
+                break;
+            default:
+                Debug.LogWarning("Invalid planet number for validation.");
+                return;
+        }
+
+        if (passed)
+        {
+            Debug.Log("<color=green> You passed! The authorities found no illegal cargo.</color>");
+        }
+        else
+        {
+            Debug.Log("<color=red> You failed! The authorities found something illegal.</color>");
+        }
     }
 
     public SelectableItem FindUIItemFor(ItemSO itemSO)
@@ -324,6 +353,8 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
+        validateButton.interactable = (selectedItem == null && itemsToPlace.Count == 0);
+
         if (Input.GetMouseButtonDown(1))
         {
             // Right-click = cancel if we have something selected
