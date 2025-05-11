@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 573a419b91dfac74dadf71171c733b23
+guid: 8dcf339a68a8d2c498f8cf327db2dc75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8561220551962443486
-    second: ISTO_SIM_E_A_UI____________seta_0
+      213: 6572905010211157632
+    second: agua personagens 2_0
+  - first:
+      213: -3844091028025865469
+    second: agua personagens 2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ISTO_SIM_E_A_UI____________seta_0
+      name: agua personagens 2_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 10
-        width: 178
-        height: 198
+        x: 34
+        y: 4
+        width: 252
+        height: 454
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edebe739bb09fc670800000000000000
-      internalID: 8561220551962443486
+      spriteID: 08675043846a73b50800000000000000
+      internalID: 6572905010211157632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: agua personagens 2_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 179
+        width: 193
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30b804ea39b07aac0800000000000000
+      internalID: -3844091028025865469
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ISTO_SIM_E_A_UI____________seta_0: 8561220551962443486
+      agua personagens 2_0: 6572905010211157632
+      agua personagens 2_1: -3844091028025865469
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

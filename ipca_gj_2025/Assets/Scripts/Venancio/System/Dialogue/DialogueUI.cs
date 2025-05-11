@@ -11,6 +11,7 @@ public class DialogueUI : MonoBehaviour
 	[SerializeField] private GameObject _choicesPanel;
 	[SerializeField] private List<ChoiceButton> _choiceButtons;
 	[SerializeField] private DialogueEvents _dialogueEvents;
+	[SerializeField] private GameObject _dialogueBG;
 
 	/// <summary>
 	/// Gets the dialogue panel GameObject, which represents the UI container for dialogue.
@@ -113,11 +114,13 @@ public class DialogueUI : MonoBehaviour
 	public void ShowDialogueBox()
 	{
 		_dialoguePanel.SetActive(true);
+		_dialogueBG.SetActive(true);
 	}
 
 	public void HideDialogueBox()
 	{
 		_dialoguePanel.SetActive(false);
+        _dialogueBG.SetActive(false);
 		_speakerName.text = "";
 		_dialogueText.text = "";
 	}

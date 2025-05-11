@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 573a419b91dfac74dadf71171c733b23
+guid: ea48ce35f5b5ee144bcd4ab77ed0cd37
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8561220551962443486
-    second: ISTO_SIM_E_A_UI____________seta_0
+      213: 8966641710735466855
+    second: deserto personagens 1_0
+  - first:
+      213: 1679366262467586852
+    second: deserto personagens 1_1
+  - first:
+      213: 8141605226712390845
+    second: deserto personagens 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ISTO_SIM_E_A_UI____________seta_0
+      name: deserto personagens 1_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 10
-        width: 178
-        height: 198
+        x: 40
+        y: 264
+        width: 210
+        height: 312
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edebe739bb09fc670800000000000000
-      internalID: 8561220551962443486
+      spriteID: 761a69ce029ef6c70800000000000000
+      internalID: 8966641710735466855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deserto personagens 1_1
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 55
+        width: 342
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42be722d7be4e4710800000000000000
+      internalID: 1679366262467586852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deserto personagens 1_2
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 172
+        width: 80
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbcd7af41daccf070800000000000000
+      internalID: 8141605226712390845
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ISTO_SIM_E_A_UI____________seta_0: 8561220551962443486
+      deserto personagens 1_0: 8966641710735466855
+      deserto personagens 1_1: 1679366262467586852
+      deserto personagens 1_2: 8141605226712390845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
