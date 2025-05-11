@@ -1,4 +1,5 @@
-(A much livelier Toxirian skitters across the bar, its legs tapping rhythmically on the floor, almost as if to a beat. It has a smooth, almost charismatic air to it—its eyes glint with a playful sparkle, and its movements are fluid. It looks at you with an open, curious expression, as if it has nothing but time.) #speaker:Cool Toxirian
+(A much livelier Toxirian skitters across the bar, its legs tapping rhythmically on the floor, almost as if to a beat.) #speaker:Cool Toxirian
+(I see it has a smooth, almost charismatic air to it—its eyes glint with a playful sparkle, and its movements are fluid. It looks at you with an open, curious expression, as if it has nothing but time.) #speaker:Me
 
 -> main
 
@@ -7,7 +8,7 @@
 + [You seem like you're having a good time. What’s your story?]
     (The Toxirian grins widely, a rapid clicking of its mandibles sounding almost like laughter.)
     Ah, a little of this, a little of that. Always looking for the next high, you know?
-    (It winks, its many eyes glinting.)
+    (It winks, its many eyes glinting.) #speaker:Cool Toxirian
     But hey, you're new here. Let me guess—you’re looking for something, yeah? Something to help you get... to the right place, huh?
 
     ++ [Yeah, I need to figure out how to sneak past Planet 70’s scans.]
