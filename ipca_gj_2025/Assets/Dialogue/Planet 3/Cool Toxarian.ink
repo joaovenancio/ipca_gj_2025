@@ -1,5 +1,5 @@
 (A much livelier Toxirian skitters across the bar, its legs tapping rhythmically on the floor, almost as if to a beat.) #speaker:Cool Toxirian
-(I see it has a smooth, almost charismatic air to it—its eyes glint with a playful sparkle, and its movements are fluid. It looks at you with an open, curious expression, as if it has nothing but time.) #speaker:Me
+(I see it has a smooth, almost charismatic air to it—its eyes glint with a playful sparkle, and its movements are fluid. #speaker:Me
 
 -> main
 
