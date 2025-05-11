@@ -63,7 +63,7 @@ public class AudioManager : Singleton<AudioManager>
 	#region Unity Messages
 	private void Awake()
 	{
-		_dontDestroyOnLoad = true;
+		//_dontDestroyOnLoad = true;
 		if (_oneShotAudioPool == null) _oneShotAudioPool = new Pool<OneShotAudio>(this.transform);
 		SingletonSetup();
 		SetupDictionaries();

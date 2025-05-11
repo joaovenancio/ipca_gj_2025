@@ -34,6 +34,12 @@ public class MenuController : MonoBehaviour
     }
 
 
+    public GameObject audiomanager;
+    public void StartGame(string levelName)
+    {
+        Destroy(audiomanager);
+        SceneManager.LoadScene(levelName);
+    }
 
     //*****************
     //--- Volume ---
