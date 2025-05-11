@@ -1,4 +1,4 @@
-1.	Crustalune? Place smells like boiled socks and regret. Only thing deeper than the ocean's the corruption! #speaker:Old Ragged Vulpar
+Crustalune? Place smells like boiled socks and regret. Only thing deeper than the ocean's the corruption! #speaker:Old Ragged Vulpar
 -> main
 
 == main ==

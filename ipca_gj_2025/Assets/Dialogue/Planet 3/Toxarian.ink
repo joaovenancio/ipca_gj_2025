@@ -42,13 +42,13 @@
 == tip ==
 
 (The Toxirian leans in slightly, its many legs moving in quick succession as if to emphasize its words.)
-    Rows 3, 4, and 8—each holds something different. A pulse, a presence, and a gate.
+    Rows 2, 4, and 5 — each holds something different. A pulse, a presence, and a gate.
     (It tilts its head as its legs tap rhythmically.)
-    Row 3? It’s the signal. Strange, like a whisper, but it’s not safe to follow."
+    Row 2? It’s the signal. Strange, like a whisper, but it’s not safe to follow."
     (Its body shifts, eyes narrowing.)
     Row 4... something moves there. It’s alive. A glitch in the system, or worse—something the scans can’t catch.
     (The native’s eyes flash, as though it’s remembering something it doesn’t want to.)
-    And Row 8? That’s the key. But there are guardians. They’ll let you through if you know the right code, but many who try never make it past.
+    And Row 5? That’s the key. But there are guardians. They’ll let you through if you know the right code, but many who try never make it past.
     (The native leans back, its body clicking as if to underscore its words.)
     Find the right way through, and you’ll make it to Planet 70. But you’ll pay the price—nothing’s free on Toxiri.
 

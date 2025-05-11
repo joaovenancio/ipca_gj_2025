@@ -22,6 +22,11 @@ public class SelectableItem : MonoBehaviour
         SetItem();
     }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     public void SetItem()
     {
         fontSize = nameText.fontSize;
