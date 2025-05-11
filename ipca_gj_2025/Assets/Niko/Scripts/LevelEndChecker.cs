@@ -78,7 +78,7 @@ public static class LevelEndChecker
     {
         foreach (var inv in inventories)
         {
-            if (inv.section == InventorySection.Middle || inv.section == InventorySection.Wings)
+            if (inv.section == InventorySection.Cargo || inv.section == InventorySection.Wings)
             {
                 for (int x = 0; x < inv.sizeColumns; x++)
                 {
